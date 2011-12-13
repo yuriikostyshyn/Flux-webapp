@@ -1,14 +1,19 @@
 require 'dependencies'
+Project.local_task :deploy
+Project.local_task :unix_deploy
 
 repositories.remote << 'http://mirrors.ibiblio.org/maven2/'
 
 define 'Flux-webapp' do
-	resources.from(_("t/"))
 	project.version = FLUX_VERSION
 	project.group = 'com.flux'
 	compile.with COMMONS_LOGGING, MOCKITO, SPRING
 	package :war
-	task :run => :compile do
-		system 'COPY "target\Flux-webapp-1.0.0.war" "%JBOSS_HOME%\standalone\deployments\"'
+	task :deploy => :compile do
+		system 'COPY "target\*.war" "%JBOSS_HOME%\standalone\deployments\"'
 	end	
+	task :unix_deploy => :compile do
+		system 'cp target/*.war $JBOSS_HOME/standalone/deployments'
+	end	
+	
 end
