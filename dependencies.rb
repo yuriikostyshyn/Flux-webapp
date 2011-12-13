@@ -3,7 +3,7 @@ require 'dependencies_versions'
 FLUX_GROUP = 'com.flux'
 FLUX_DOMAIN = "#{FLUX_GROUP}:Flux-domain:jar:#{FLUX_VERSION}"
 MOCKITO = "org.mockito:mockito-all:jar:#{MOCKITO_VERSION}"
-SPRING = struct (
+SPRING = struct(
 	:asm =>"org.springframework:spring-asm:jar:#{SPRING_VERSION}",
 	:beans =>"org.springframework:spring-beans:jar:#{SPRING_VERSION}",
 	:context =>"org.springframework:spring-context:jar:#{SPRING_VERSION}",
