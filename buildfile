@@ -5,7 +5,7 @@ repositories.remote << 'http://mirrors.ibiblio.org/maven2/'
 define 'Flux-webapp' do
 	project.version = FLUX_VERSION
 	project.group = 'com.flux'
-	compile.with MOCKITO, SPRING
+	compile.with COMMONS_LOGGING, MOCKITO, SPRING
 	package :war
 end
 

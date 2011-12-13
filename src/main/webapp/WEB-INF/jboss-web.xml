@@ -2,10 +2,5 @@
 
  <context-root>/flux</context-root>
 
-   <class-loading java2ClassLoadingCompliance="false">
-      <loader-repository>
-         com.example:war=flux-webapp-1.0.0
-         <loader-repository-config>java2ParentDelegation=false</loader-repository-config>
-      </loader-repository>
-   </class-loading>
+  
 </jboss-web>
